@@ -9,7 +9,8 @@ This repo contains my day-to-day progress in SQL and database concepts, primaril
 
 | Day | Topics Covered         | Files                                  |
 |-----|------------------------|----------------------------------------|
-| 1   |Introduction to DBMS    | `dbms-project\Introduction_to_DBMS`               |
+| 1   |Introduction to DBMS    | `dbms-project\Introduction_to_DBMS`      
+| 2   |uploaded imp. point of DBMS|  dbms-project\Introduction_to_DBMS\DBMS_Notes_Omkar.md'|
 | ... | More coming soon...    | ...                                    |
 
 ---
