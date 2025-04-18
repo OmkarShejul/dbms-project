@@ -24,4 +24,10 @@ This repo contains my day-to-day progress in SQL and database concepts, primaril
 ---
 
 ## 🗂️ Folder Structure
+dbms-project/
+│
+├── Introduction_to_dbms/
+│   └── DBMS_Notes_Omkar.md/
+|    
+├── README.md
 
