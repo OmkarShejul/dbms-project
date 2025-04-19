@@ -10,7 +10,8 @@ This repo contains my day-to-day progress in SQL and database concepts, primaril
 | Day | Topics Covered         | Files                                  |
 |-----|------------------------|----------------------------------------|
 | 1   |Introduction to DBMS    | `dbms-project\Introduction_to_DBMS`      
-| 2   |uploaded imp. point of DBMS|  dbms-project\Introduction_to_DBMS\DBMS_Notes_Omkar.md'|
+| 2   |uploaded imp. point of DBMS| "dbms-project\Introduction_to_DBMS\DBMS_Notes_Omkar.md'|
+| 3   |Uploaded 2nd chapters and inserted some points| "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
 | ... | More coming soon...    | ...                                    |
 
 ---
@@ -28,7 +29,8 @@ dbms-project/
 │
 ├── Introduction_to_dbms/
 │   └── DBMS_Notes_Omkar.md/
-|    
+|-- CHAPTER 2
+|
 ├── README.md
 
 
