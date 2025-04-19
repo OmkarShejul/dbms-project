@@ -10,7 +10,6 @@ SELECT * FROM table_name;
 SELECT column1, column2 FROM table_name;
 ```
 
-![Basic SELECT Statement](https://www.sqltutorial.org/wp-content/uploads/2019/05/SQL-SELECT-Statement.png)
 
 ---
 
@@ -36,24 +35,131 @@ SELECT first_name || ' ' || last_name AS full_name FROM employees;
 SELECT salary + 1000 AS increased_salary FROM employees;
 ```
 
-![SELECT Enhancements](https://www.geeksforgeeks.org/wp-content/uploads/SQL-Select-Clause.png)
 
 ---
 
-## Display Structure of Table
+## Displaying the Structure of a Table
+
+To understand the schema of a table — including column names, data types, and null constraints — you can use several methods in Oracle SQL.
+
+### 🧪 Method 1: `DESC` Command (SQL*Plus / SQLcl)
 ```sql
-DESC table_name;
+DESC employees;
+```
+Shows:
+```
+Name           Null?    Type
+-------------- -------- -----------------
+EMPLOYEE_ID    NOT NULL NUMBER(6)
+FIRST_NAME              VARCHAR2(20)
+LAST_NAME     NOT NULL  VARCHAR2(25)
+EMAIL         NOT NULL  VARCHAR2(100)
+HIRE_DATE     NOT NULL  DATE
+```
+
+> ✅ **Use when** working in terminal-based tools like SQL*Plus or SQLcl.
+
+---
+
+### 📊 Method 2: Querying Data Dictionary — `USER_TAB_COLUMNS`
+```sql
+SELECT 
+    column_name, 
+    data_type, 
+    data_length, 
+    nullable
+FROM 
+    user_tab_columns
+WHERE 
+    table_name = 'EMPLOYEES';
+```
+
+> 💡 Note: Table names are **usually uppercase** in Oracle metadata views.
+
+---
+
+### 📌 Diagram: Table Structure Example
+
+
+This diagram illustrates a simplified structure of a table with columns, types, and key constraints — just like what you'd see in a `DESC` or `USER_TAB_COLUMNS` query.
+
+---
+
+### 🛠️ Other Related Data Dictionary Views
+| View Name           | Description                                  |
+|---------------------|----------------------------------------------|
+| `ALL_TAB_COLUMNS`   | Info on all tables the user can access       |
+| `DBA_TAB_COLUMNS`   | Info on all tables in the database (DBA only)|
+| `USER_TAB_COLUMNS`  | Info on tables owned by the user             |
+
+
+
+
+---
+
+## Filtering Data with the WHERE Clause
+
+The `WHERE` clause is used to filter records that meet a specific condition. It’s one of the most essential clauses in SQL for retrieving targeted data.
+
+### 🔍 Syntax
+```sql
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+```
+
+### ✅ Examples
+
+#### 1. Simple Equality
+```sql
+SELECT * FROM employees
+WHERE department_id = 90;
+```
+
+#### 2. Multiple Conditions with AND / OR
+```sql
+SELECT * FROM employees
+WHERE department_id = 90 AND salary > 10000;
+```
+
+#### 3. Using BETWEEN
+```sql
+SELECT * FROM employees
+WHERE hire_date BETWEEN '01-JAN-2020' AND '31-DEC-2020';
+```
+
+#### 4. Using IN
+```sql
+SELECT * FROM employees
+WHERE department_id IN (10, 20, 30);
+```
+
+#### 5. Using LIKE (pattern matching)
+```sql
+SELECT * FROM employees
+WHERE last_name LIKE 'S%';  -- Names starting with S
+```
+
+#### 6. Checking for NULL
+```sql
+SELECT * FROM employees
+WHERE commission_pct IS NULL;
 ```
 
 ---
 
-## WHERE Clause
-Used to filter rows.
-```sql
-SELECT * FROM employees WHERE department_id = 90;
-```
+### 📌 Diagram: WHERE Clause Filtering Logic
 
-![WHERE Clause](https://www.w3schools.com/sql/img_where.gif)
+This diagram shows how the `WHERE` clause filters rows based on a logical condition.
+
+---
+
+### 💡 Tips
+- Text values in conditions must be in **single quotes**: `'HR'`, `'John'`
+- Date values depend on your **NLS date format** (e.g., `'01-JAN-2023'`)
+- Use **parentheses** to group conditions when using `AND`/`OR` to avoid logic errors
+
+
 
 ---
 
@@ -70,7 +176,6 @@ Eliminates duplicate rows.
 SELECT DISTINCT department_id FROM employees;
 ```
 
-![DISTINCT Keyword](https://www.w3schools.com/sql/img_distinct.gif)
 
 ---
 
