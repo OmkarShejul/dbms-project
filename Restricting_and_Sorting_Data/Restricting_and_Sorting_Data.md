@@ -163,10 +163,81 @@ This diagram shows how the `WHERE` clause filters rows based on a logical condit
 
 ---
 
-## NULL Values
-- NULL represents missing or unknown data.
-- NULL is **not** 0 or blank.
-- Arithmetic operations with NULL result in NULL.
+
+
+---
+
+## Handling NULL Values in Oracle SQL
+
+`NULL` in SQL represents **missing, unknown, or undefined** data. It is not equivalent to `0` (zero) or an empty string — it means "no value."
+
+---
+
+### 🔍 Key Concepts:
+- **NULL ≠ 0**: Zero is a number; NULL is an absence of a value.
+- **NULL ≠ ''**: An empty string is still a value; NULL is unknown.
+- **Any arithmetic operation with NULL results in NULL**.
+
+---
+
+### ⚠️ Example: Arithmetic with NULL
+```sql
+SELECT salary + NULL AS result FROM employees;
+-- Output: NULL
+```
+
+---
+
+### ✅ Checking for NULL
+
+#### Use `IS NULL` or `IS NOT NULL`
+```sql
+SELECT * FROM employees
+WHERE commission_pct IS NULL;
+```
+
+```sql
+SELECT * FROM employees
+WHERE manager_id IS NOT NULL;
+```
+
+> ❌ Do **not** use `= NULL` or `!= NULL` — they will not work!
+
+---
+
+### 🛠️ Functions for NULL Handling
+
+#### 1. `NVL(expr1, expr2)` — Replaces NULL with a value
+```sql
+SELECT NVL(commission_pct, 0) AS commission FROM employees;
+```
+
+#### 2. `NVL2(expr1, expr2, expr3)` — If expr1 is NOT NULL, returns expr2; else returns expr3
+```sql
+SELECT NVL2(commission_pct, 'Has Commission', 'No Commission') AS status FROM employees;
+```
+
+#### 3. `COALESCE(expr1, expr2, ..., exprN)` — Returns first non-NULL expression
+```sql
+SELECT COALESCE(phone_number, email, 'No contact info') FROM employees;
+```
+
+---
+
+### 📌 Diagram: NULL Behavior
+
+![NULL Concept Diagram](https://www.sqltutorial.org/wp-content/uploads/2016/04/sql-null.png)
+
+This diagram shows the difference between NULL, 0, and empty strings, and how functions like `NVL` and `COALESCE` handle them.
+
+---
+
+### 💡 Tips
+- Use `NVL` or `COALESCE` to ensure cleaner output and prevent issues in reports.
+- Be cautious when using `NULL` in `WHERE`, `JOIN`, and `GROUP BY` clauses.
+- Avoid logic like `= NULL` — always use `IS NULL`.
+
+
 
 ---
 
