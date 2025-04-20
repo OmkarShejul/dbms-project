@@ -241,14 +241,68 @@ This diagram shows the difference between NULL, 0, and empty strings, and how fu
 
 ---
 
-## DISTINCT Keyword
-Eliminates duplicate rows.
+## Eliminating Duplicates with the DISTINCT Keyword
+
+The `DISTINCT` keyword is used in SQL to **remove duplicate values** from the result set. It helps you see only the **unique** values in a column or a set of columns.
+
+---
+
+### 🔍 Syntax
+```sql
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+```
+
+---
+
+### ✅ Examples
+
+#### 1. Unique Department IDs
+```sql
+SELECT DISTINCT department_id
+FROM employees;
+```
+
+#### 2. Unique Combinations of Job ID and Department
+```sql
+SELECT DISTINCT job_id, department_id
+FROM employees;
+```
+
+> Note: When using `DISTINCT` on multiple columns, SQL returns **unique combinations** of those columns — not uniqueness in each column individually.
+
+---
+
+### ⚠️ Without DISTINCT vs With DISTINCT
+
+#### Without DISTINCT
+```sql
+SELECT department_id FROM employees;
+```
+- May return duplicate department IDs.
+
+#### With DISTINCT
 ```sql
 SELECT DISTINCT department_id FROM employees;
 ```
-
+- Returns each department ID only once.
 
 ---
+
+### 📌 Diagram: How DISTINCT Works
+
+![DISTINCT Diagram](https://www.sqltutorial.org/wp-content/uploads/2021/01/SQL-DISTINCT.png)
+
+This diagram shows how duplicate values are removed from the output when `DISTINCT` is applied.
+
+---
+
+### 💡 Tips
+- You can use `DISTINCT` with expressions, joins, or subqueries.
+- Avoid using `DISTINCT` to cover up poor joins — fix the join condition instead.
+- Consider using `GROUP BY` if you also want aggregations (like COUNT).
+---
+
 
 ## Combining Columns and Literals
 ```sql
