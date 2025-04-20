@@ -304,10 +304,63 @@ This diagram shows how duplicate values are removed from the output when `DISTIN
 ---
 
 
-## Combining Columns and Literals
+## Combining Columns and Literals in SQL Output
+
+In Oracle SQL, you can **combine column values** with **string literals** using the `||` (concatenation operator). This allows you to create more descriptive and human-readable outputs in your queries.
+
+---
+
+### 🔍 Syntax
 ```sql
-SELECT first_name || ' works as ' || job_id AS job_info FROM employees;
+SELECT column1 || ' literal text ' || column2 AS alias_name
+FROM table_name;
 ```
+
+---
+
+### ✅ Examples
+
+#### 1. Combining First and Last Name
+```sql
+SELECT first_name || ' ' || last_name AS full_name
+FROM employees;
+```
+- Combines two columns with a space in between.
+
+#### 2. Adding a Label to a Value
+```sql
+SELECT 'Salary: ' || salary AS salary_info
+FROM employees;
+```
+- Adds the text "Salary: " before each value.
+
+#### 3. Combining Multiple Columns with Custom Text
+```sql
+SELECT first_name || ' works as a ' || job_id AS job_info
+FROM employees;
+```
+
+---
+
+### ⚠️ Notes
+- Ensure all pieces being combined are **strings** or will be **implicitly converted**.
+- Be mindful of spacing — add spaces as needed inside the quotes.
+
+---
+
+### 📌 Diagram: Column and Literal Combination
+
+![Combining Columns Diagram](https://www.sqltutorial.org/wp-content/uploads/2021/01/SQL-CONCAT-Columns.png)
+
+This visual shows how column values and text literals are joined into a single output string.
+
+---
+
+### 💡 Tips
+- Use `AS alias_name` to assign clear names to the resulting columns.
+- You can mix columns, text, and even numbers in the same expression.
+
+
 
 ---
 
