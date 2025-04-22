@@ -11,8 +11,8 @@ This repo contains my day-to-day progress in SQL and database concepts, primaril
 |-----|------------------------|----------------------------------------|
 | 1   |Introduction to DBMS    | `dbms-project\Introduction_to_DBMS`      
 | 2   |uploaded imp. point of DBMS| "dbms-project\Introduction_to_DBMS\DBMS_Notes_Omkar.md'|
-| 3   |Uploaded 2nd chapters and inserted some points| "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
-| 4   |uploded : 1. Handling NULL Values (NVL, NVL2, COALESCE),2.Using DISTINCT to Remove Duplicates,3.Combining Columns and Literals with | "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
+| 3   |Uploaded chapter-2 and its related content| "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
+| 4   |updated chapter-2 with: 1. Handling NULL Values (NVL, NVL2, COALESCE),2.Using DISTINCT to Remove Duplicates,3.Combining Columns and Literals with | "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
 | 5 | uploaded chapter-3 : restricting and storing Data| "dbms-project\restricting_and_storing_data\Restricting_and_Sorting_Data.md"|
 | ... | More coming soon...    | ...                                    |
 
