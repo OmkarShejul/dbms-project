@@ -14,6 +14,7 @@ This repo contains my day-to-day progress in SQL and database concepts, primaril
 | 3   |Uploaded chapter-2 and its related content| "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
 | 4   |updated chapter-2 with: 1. Handling NULL Values (NVL, NVL2, COALESCE),2.Using DISTINCT to Remove Duplicates,3.Combining Columns and Literals with | "dbms-project\Restricting_and_Sorting_Data\Restricting_and_Sorting_Data.md"|
 | 5 | uploaded chapter-3 : restricting and storing Data| "dbms-project\restricting_and_storing_data\Restricting_and_Sorting_Data.md"|
+| 6 | Today uploaded my written notes on on chapter 3 and aslo uploadws some wxample to understand|
 | ... | More coming soon...    | ...                                    |
 
 ---
