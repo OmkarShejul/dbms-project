@@ -5,7 +5,7 @@
 
 Creating the following reports required for AC Company:
 
-### 1. Report for HR Department
+### 1. Report for HR Department :
 - **Requirement**: Display last name and salary of employees whose salary is greater than 2000.
 
 ```sql
@@ -14,7 +14,7 @@ FROM employees
 WHERE salary > 2000;
 ```
 
-### 2. Details of Employee Number 495
+### 2. Details of Employee Number 495 :
 - **Requirement**: Display all details for employee number 495.
 
 ```sql
@@ -23,7 +23,7 @@ FROM employees
 WHERE employee_id = 495;
 ```
 
-### 3. Employees with Salary NOT Between 5000 and 8000
+### 3. Employees with Salary NOT Between 5000 and 8000 :
 - **Requirement**: Display last name and salary of employees whose salary is NOT between 5000 and 8000.
 
 ```sql
@@ -32,7 +32,7 @@ FROM employees
 WHERE salary NOT BETWEEN 5000 AND 8000;
 ```
 
-### 4. Employees with Last Name Starting with 'S'
+### 4. Employees with Last Name Starting with 'S' :
 - **Requirement**: Display last names of employees whose last name starts with 'S'.
 
 ```sql
@@ -41,7 +41,7 @@ FROM employees
 WHERE last_name LIKE 'S%';
 ```
 
-### 5. Sort Employee Details by Last Name
+### 5. Sort Employee Details by Last Name :
 - **Requirement**: Sort employees by last name in ascending order.
 
 ```sql
@@ -50,7 +50,7 @@ FROM employees
 ORDER BY last_name ASC;
 ```
 
-## Substitution Variables in SQL
+## Substitution Variables in SQL :
 
 - **Substitution Variable**: Prompt the user to input a value.
 - **Used In**: 
@@ -67,7 +67,7 @@ FROM employees
 WHERE employee_id = &employee_id;
 ```
 
-## Notes on Substitution Variables
+## Notes on Substitution Variables :
 - **Character and Date Values**: Must be enclosed in single quotes (`' '`).
 - **Numeric Values**: Can be directly input.
 
