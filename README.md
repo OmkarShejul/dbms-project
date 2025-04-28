@@ -2,6 +2,7 @@
 
 Welcome to my **Database Management System (DBMS)** daily learning repository!  
 This repo contains my day-to-day progress in SQL and database concepts, primarily using **Oracle SQL**. Each day's work includes SQL scripts like table creation, data manipulation, queries, joins, views, and more.
+This is file where i upload my daily progress.
 
 ---
 
