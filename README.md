@@ -25,6 +25,7 @@ This is file where i upload my daily progress.
 - Oracle SQL
 - SQL Developer (for query execution)
 - Git & GitHub (for version control)
+- MongoDB 
 
 ---
 
